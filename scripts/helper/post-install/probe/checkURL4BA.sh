@@ -120,7 +120,7 @@ verifyInputParameters(){
     echo "5. Use blue Copy button"
     echo
     echo -e "* To get ${BOLD_TEXT}cp4admin${RESET_TEXT} password run:"
-    echo -e "${BLUE_TEXT}oc describe cm icp4adeploy-cp4ba-access-info -n $2 | grep password | awk '{split(\$0,a,\":\");print a[2]}' | uniq${RESET_TEXT}"
+    echo -e "${BLUE_TEXT}oc describe cm content-cp4ba-access-info -n $2 | grep password | cut -f2 -d':' | uniq${RESET_TEXT}"
     echo
     #echo "* Example:"
     #echo -e "${BOLD_TEXT}./checkURL4BA.sh cp4ba-multi-p1.cloudpak-bringup.com cp4ba-prod sAHHjkhjhAUlksjsIIJOSLS= BUAdmin BUPassword${RESET_TEXT}"
